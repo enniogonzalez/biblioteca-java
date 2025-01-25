@@ -9,8 +9,9 @@ public class Libro {
     private LocalDate anio;
     private String ISBN;
     private Categorias categoria;
+    private Autor autor;
 
-    public Libro(String titulo, String anio, String ISBN, Categorias categoria) {
+    public Libro(String titulo, String anio, String ISBN, Categorias categoria, Autor autor) {
         this.titulo = titulo;
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -21,8 +22,13 @@ public class Libro {
         }
         this.ISBN = ISBN;
         this.categoria = categoria;
+        this.autor = autor;
     }
     
+    public Autor getAutor() {
+        return this.autor;
+    }
+
     public String getTitulo() {
         return this.titulo;
     }
